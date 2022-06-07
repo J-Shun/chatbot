@@ -5,16 +5,23 @@ body {
 
 .container {
     max-width: 1366px;
+    margin: 100%;
     margin: auto;
     padding: 0 20px;
+    // @include pad {
+    //     width: 80%;
+    // }
 }
 
 h2 {
     @include size-32;
+    @include pad {
+        @include size-28;
+    }
 }
 
 h3 {
-    @include size-24
+    font-weight: bold;
 }
 
 .header {
@@ -26,6 +33,9 @@ h3 {
     @include pad {
         background-image: none;
     }
+    @include phone {
+        margin-bottom: 60px;
+    }
     
     .navbar {
         margin-bottom: 30px;
@@ -33,16 +43,23 @@ h3 {
             border-bottom: 2px solid #FFD153;
             margin-bottom: 32px;
         }
-        
 
         .container {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             padding-top: 24px;
             padding-bottom: 24px;
+            @include pad {
+                padding-top: 8px;
+                padding-bottom: 8px;
+            }
 
             img {
                 height: 40px;
+                @include pad {
+                    height: 24px;
+                }
             }
 
             a {
@@ -60,27 +77,48 @@ h3 {
         .container {
             display: flex;
             padding-bottom: 117px;
+            @include phone {
+                flex-direction: column;
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
 
             .info {
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 width: 50%;
+                @include phone {
+                    width: 100%;
+                }
 
                 h1 {
                     color: $green;
                     font-weight: bold;
                     margin-bottom: 8px;
+                    @include pad {
+                        font-size: 16px;
+                        line-height: 24px;
+                    }
                 }
 
                 p {
                     &:first-of-type {
-                        @include size-48;
+                        font-size: 48px;
+                        line-height: 70px;
+                        font-weight: bold;
                         margin-bottom: 16px;
+                        @include pad {
+                            @include size-32;
+                        }
                     }
 
                     font-size: 20px;
                     line-height: 29px;
+                    @include pad {
+                        font-size: 16px;
+                        line-height: 24px;
+                    }
                 }
             }
 
@@ -92,6 +130,9 @@ h3 {
                     background-position: bottom;
                     background-size: contain;
                 }
+                @include phone {
+                    width: 100%;
+                }
             }
         }
     }
@@ -99,13 +140,25 @@ h3 {
 
 .main {
     margin-bottom: $mb-100;
+    @include phone {
+        margin-bottom: 60px;
+    }
+    @include phone {
+        margin-bottom: 94px;
+    }
 
     .platforms {
         text-align: center;
         margin-bottom: $mb-100;
+        @include phone {
+            margin-bottom: 60px;
+        }
         
         h2 {
             margin-bottom: 48px;
+            @include pad {
+                margin-bottom: 32px;
+            }
         }
 
         .platform-list {
@@ -114,16 +167,34 @@ h3 {
             flex-wrap: wrap;
 
             .platform-card {
-                // width: 33%;
+                width: 33%;
+
+                @include phone {
+                    width: 100%;
+                    margin-bottom: 24px;
+                }
 
                 img {
                     width: 90px;
                     height: 90px;
                     margin-bottom: 24px;
+
+                    @include pad {
+                        width: 60px;
+                        height: 60px;
+                        margin-bottom: 16px;
+                    }
                 }
                 
                 h3 {
+                    font-size: 24px;
+                    line-height: 35px;
                     margin-bottom: 24px;
+                    @include pad {
+                        font-size: 18px;
+                        line-height: 26px;
+                        margin-bottom: 16px;
+                    }
                 }
 
                 p {
@@ -136,6 +207,9 @@ h3 {
     .target {
         text-align: center;
         margin-bottom: $mb-100;
+        @include phone {
+            margin-bottom: 60px;
+        }
 
         h2 {
             margin-bottom: 16px;
@@ -145,12 +219,25 @@ h3 {
             font-size: 20px;
             line-height: 29px;
             margin-bottom: 48px;
+            @include pad {
+                font-size: 18px;
+                line-height: 26px;
+                margin-bottom: 32px;
+            }
         }
 
         .characters {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
+            justify-content: center;
             gap: 16px;
+            @include pad {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+            @include phone {
+                grid-template-columns: 80%
+            }
 
             .character {
                 @include card;
@@ -177,22 +264,40 @@ h3 {
 
     .service {
         margin-bottom: $mb-100;
+        @include phone {
+            margin-bottom: 60px;
+        }
 
         .service-content {
             display: flex;
-            align-items: center;
+            @include pad {
+                flex-direction: column-reverse;
+            }
 
             .service-cards {
-                display: flex;
-                flex-wrap: wrap;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                justify-content: center;
                 width: 50%;
-                row-gap: 28px;
+                gap: 28px 47px;
+                @include pad {
+                    width: 100%;
+                    gap: 24px
+                }
+                @include phone {
+                    grid-template-columns: 80%;
+
+                    .order {
+                        order: 1;
+                    }
+                }
                 
                 .service-card {
                     @include card;
-                    width: calc(50% - 47px);
                     padding: 32px 32px 48px;
-                    margin-right: 47px;
+                    @include pad {
+                        padding: 32px 41px 48px 24px;
+                    }
 
                     .image-container {
                         width: 86px;
@@ -224,11 +329,18 @@ h3 {
                         font-size: 18px;
                         line-height: 26px;
                         margin-bottom: 16px;
+                        @include pad {
+                            margin-bottom: 20px;
+                        }
                     }
                 }
             }
             .service-info {
                 margin: auto;
+                @include pad {
+                    text-align: center;
+                    margin-bottom: 32px;
+                }
 
                 h2 {
                     margin-bottom: 16px;
@@ -238,6 +350,11 @@ h3 {
                     font-size: 18px;
                     line-height: 26px;
                     margin-bottom: 24px;
+                    @include pad {
+                        font-size: 16px;
+                        line-height: 24px;
+                        margin-bottom: 16px;
+                    }
                 }
 
                 button {
@@ -252,6 +369,9 @@ h3 {
         h2 {
             text-align: center;
             margin-bottom: 48px;
+            @include pad {
+                margin-bottom: 32px;
+            }
         }
 
         .testimonial-cards {
@@ -259,10 +379,19 @@ h3 {
             grid-template-columns: repeat(3, 1fr);
             gap: 16px;
             line-height: 24px;
+            @include pad {
+                grid-template-columns: repeat(1, 1fr);
+            }
 
             .testimonial-card {
                 display: flex;
                 position: relative;
+
+                & + .testimonial-card{
+                    @include pad {
+                        display: none;
+                    }
+                }
 
                 & > img {
                     position: absolute;
@@ -276,6 +405,9 @@ h3 {
                     @include card;
                     margin-top: 56px;
                     padding: 0px 32px;
+                    @include pad {
+                        padding: 0 16px;
+                    }
 
                     .client-txt {
                         margin: 48px 0 24px;
@@ -290,6 +422,9 @@ h3 {
                         display: flex;
                         justify-content: space-between;
                         margin-bottom: 24px;
+                        @include pad {
+                            margin-bottom: 16px;
+                        }
 
                         .client-info {
                             p:first-of-type {
@@ -300,6 +435,10 @@ h3 {
 
                         .client-rating {
                             align-self: flex-end;
+
+                            img {
+                                height: 16px;
+                            }
                         }
                     }
                 }
@@ -317,15 +456,26 @@ h3 {
         background-repeat: no-repeat;
         background-position: top center;
         background-size: 100% auto;
+        @include phone {
+            background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/footer_sm.svg);
+        }
 
         p {
             @include size-32;
             margin: 260px 0 48px;
+            @include phone {
+                font-size: 24px;
+                line-height: 35px;
+                margin: 293px 0 24px;
+            }
         }
 
         button {
             @include button;
             margin-bottom: $mb-100;
+            @include phone {
+                margin-bottom: 72px;
+            }
         }
     }
 

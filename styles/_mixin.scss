@@ -1,18 +1,12 @@
-@mixin size-48 {
-    font-size: $fz-48;
-    line-height: $lh-70;
-    font-weight: bold;
-}
-
 @mixin size-32 {
     font-size: $fz-32;
     line-height: $lh-46;
     font-weight: bold;
 }
 
-@mixin size-24 {
-    font-size: $fz-24;
-    line-height: $lh-35;
+@mixin size-28 {
+    font-size: $fz-28;
+    line-height: $lh-40;
     font-weight: bold;
 }
 
@@ -33,6 +27,12 @@
 
 @mixin pad {
     @media(max-width: 992px) {
-        @content
+        @content;
+    }
+}
+
+@mixin phone {
+    @media(max-width: 576px) {
+        @content;
     }
 }
