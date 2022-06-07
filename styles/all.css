@@ -1,0 +1,467 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  color: #221E1F;
+  line-height: 24px;
+}
+
+.container {
+  max-width: 1366px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 46px;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 35px;
+  font-weight: bold;
+}
+
+.header {
+  background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/bg_home.svg);
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: contain;
+  margin-bottom: 100px;
+}
+
+@media (max-width: 992px) {
+  .header {
+    background-image: none;
+  }
+}
+
+.header .navbar {
+  margin-bottom: 30px;
+}
+
+@media (max-width: 992px) {
+  .header .navbar {
+    border-bottom: 2px solid #FFD153;
+    margin-bottom: 32px;
+  }
+}
+
+.header .navbar .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.header .navbar .container img {
+  height: 40px;
+}
+
+.header .navbar .container a {
+  display: inline-block;
+  color: #fff;
+  line-height: 24px;
+  background-color: #FF5D50;
+  border-radius: 22px;
+  padding: 8px 32px;
+}
+
+.header .home .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 117px;
+}
+
+.header .home .container .info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50%;
+}
+
+.header .home .container .info h1 {
+  color: #56C4C5;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.header .home .container .info p {
+  font-size: 20px;
+  line-height: 29px;
+}
+
+.header .home .container .info p:first-of-type {
+  font-size: 48px;
+  line-height: 70px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.header .home .container .info-img {
+  width: 50%;
+}
+
+@media (max-width: 992px) {
+  .header .home .container .info-img {
+    background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/bg_home_sm.svg);
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: contain;
+  }
+}
+
+.main {
+  margin-bottom: 100px;
+}
+
+.main .platforms {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.main .platforms h2 {
+  margin-bottom: 48px;
+}
+
+.main .platforms .platform-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.main .platforms .platform-list .platform-card img {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 24px;
+}
+
+.main .platforms .platform-list .platform-card h3 {
+  margin-bottom: 24px;
+}
+
+.main .platforms .platform-list .platform-card p {
+  color: #747474;
+}
+
+.main .target {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.main .target h2 {
+  margin-bottom: 16px;
+}
+
+.main .target .target-info {
+  font-size: 20px;
+  line-height: 29px;
+  margin-bottom: 48px;
+}
+
+.main .target .characters {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.main .target .characters .character {
+  border-radius: 12px;
+  -webkit-box-shadow: 0 2px 10px #00000014;
+          box-shadow: 0 2px 10px #00000014;
+  overflow: hidden;
+}
+
+.main .target .characters .character img {
+  vertical-align: bottom;
+  margin-bottom: 16px;
+}
+
+.main .target .characters .character h3 {
+  color: #56C4C5;
+  font-size: 16px;
+  line-height: 24px;
+  margin-bottom: 16px;
+}
+
+.main .target .characters .character p {
+  margin-bottom: 24px;
+}
+
+.main .service {
+  margin-bottom: 100px;
+}
+
+.main .service .service-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.main .service .service-content .service-cards {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 50%;
+  row-gap: 28px;
+}
+
+.main .service .service-content .service-cards .service-card {
+  border-radius: 12px;
+  -webkit-box-shadow: 0 2px 10px #00000014;
+          box-shadow: 0 2px 10px #00000014;
+  width: calc(50% - 47px);
+  padding: 32px 32px 48px;
+  margin-right: 47px;
+}
+
+.main .service .service-content .service-cards .service-card .image-container {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 2px 10px #00000014;
+          box-shadow: 0 2px 10px #00000014;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-bottom: 24px;
+}
+
+.main .service .service-content .service-cards .service-card .arrow {
+  background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/icon01.svg);
+}
+
+.main .service .service-content .service-cards .service-card .robot {
+  background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/icon02.svg);
+}
+
+.main .service .service-content .service-cards .service-card .message {
+  background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/icon03.svg);
+}
+
+.main .service .service-content .service-cards .service-card .group-message {
+  background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/icon04.svg);
+}
+
+.main .service .service-content .service-cards .service-card h3 {
+  font-size: 18px;
+  line-height: 26px;
+  margin-bottom: 16px;
+}
+
+.main .service .service-content .service-info {
+  margin: auto;
+}
+
+.main .service .service-content .service-info h2 {
+  margin-bottom: 16px;
+}
+
+.main .service .service-content .service-info p {
+  font-size: 18px;
+  line-height: 26px;
+  margin-bottom: 24px;
+}
+
+.main .service .service-content .service-info button {
+  font-size: 18px;
+  line-height: 26px;
+  padding: 12px 32px;
+  color: #FFF;
+  background-color: #56C4C5;
+  border: 1px solid #56C4C5;
+  border-radius: 27px;
+}
+
+.main .testimonials h2 {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.main .testimonials .testimonial-cards {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  line-height: 24px;
+}
+
+.main .testimonials .testimonial-cards .testimonial-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.main .testimonials .testimonial-cards .testimonial-card > img {
+  position: absolute;
+  top: 0;
+  left: 32px;
+  width: 80px;
+  border-radius: 50%;
+}
+
+.main .testimonials .testimonial-cards .testimonial-card .card-info {
+  border-radius: 12px;
+  -webkit-box-shadow: 0 2px 10px #00000014;
+          box-shadow: 0 2px 10px #00000014;
+  margin-top: 56px;
+  padding: 0px 32px;
+}
+
+.main .testimonials .testimonial-cards .testimonial-card .card-info .client-txt {
+  margin: 48px 0 24px;
+}
+
+.main .testimonials .testimonial-cards .testimonial-card .card-info hr {
+  color: #DDDDDD;
+  margin-bottom: 24px;
+}
+
+.main .testimonials .testimonial-cards .testimonial-card .card-info .client {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.main .testimonials .testimonial-cards .testimonial-card .card-info .client .client-info p:first-of-type {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.main .testimonials .testimonial-cards .testimonial-card .card-info .client .client-rating {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.footer .footer-info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/home_footer.svg);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: 100% auto;
+}
+
+.footer .footer-info p {
+  font-size: 32px;
+  line-height: 46px;
+  font-weight: bold;
+  margin: 260px 0 48px;
+}
+
+.footer .footer-info button {
+  font-size: 18px;
+  line-height: 26px;
+  padding: 12px 32px;
+  color: #FFF;
+  background-color: #56C4C5;
+  border: 1px solid #56C4C5;
+  border-radius: 27px;
+  margin-bottom: 100px;
+}
+
+.footer .bottom {
+  padding: 16px 0;
+  background-color: #F5F5F5;
+  text-align: center;
+}
+/*# sourceMappingURL=all.css.map */

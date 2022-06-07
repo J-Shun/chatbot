@@ -1,0 +1,337 @@
+body {
+    color: $black;
+    line-height: 24px;
+}
+
+.container {
+    max-width: 1366px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+h2 {
+    @include size-32;
+}
+
+h3 {
+    @include size-24
+}
+
+.header {
+    background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/bg_home.svg);
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: contain;
+    margin-bottom: $mb-100;
+    @include pad {
+        background-image: none;
+    }
+    
+    .navbar {
+        margin-bottom: 30px;
+        @include pad {
+            border-bottom: 2px solid #FFD153;
+            margin-bottom: 32px;
+        }
+        
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 24px;
+            padding-bottom: 24px;
+
+            img {
+                height: 40px;
+            }
+
+            a {
+                display: inline-block;
+                color: #fff;
+                line-height: 24px;
+                background-color: #FF5D50;
+                border-radius: 22px;
+                padding: 8px 32px;
+            }
+        }
+    }
+
+    .home {
+        .container {
+            display: flex;
+            padding-bottom: 117px;
+
+            .info {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                width: 50%;
+
+                h1 {
+                    color: $green;
+                    font-weight: bold;
+                    margin-bottom: 8px;
+                }
+
+                p {
+                    &:first-of-type {
+                        @include size-48;
+                        margin-bottom: 16px;
+                    }
+
+                    font-size: 20px;
+                    line-height: 29px;
+                }
+            }
+
+            .info-img {
+                width: 50%;
+                @include pad {
+                    background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/bg_home_sm.svg);
+                    background-repeat: no-repeat;
+                    background-position: bottom;
+                    background-size: contain;
+                }
+            }
+        }
+    }
+}
+
+.main {
+    margin-bottom: $mb-100;
+
+    .platforms {
+        text-align: center;
+        margin-bottom: $mb-100;
+        
+        h2 {
+            margin-bottom: 48px;
+        }
+
+        .platform-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+
+            .platform-card {
+                // width: 33%;
+
+                img {
+                    width: 90px;
+                    height: 90px;
+                    margin-bottom: 24px;
+                }
+                
+                h3 {
+                    margin-bottom: 24px;
+                }
+
+                p {
+                    color: #747474;
+                }
+            }
+        }
+    }
+
+    .target {
+        text-align: center;
+        margin-bottom: $mb-100;
+
+        h2 {
+            margin-bottom: 16px;
+        }
+
+        .target-info {
+            font-size: 20px;
+            line-height: 29px;
+            margin-bottom: 48px;
+        }
+
+        .characters {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+
+            .character {
+                @include card;
+                overflow: hidden;
+
+                img {
+                    vertical-align: bottom;
+                    margin-bottom: 16px;
+                }
+
+                h3 {
+                    color: $green;
+                    font-size: 16px;
+                    line-height: 24px;
+                    margin-bottom: 16px;
+                }
+
+                p {
+                    margin-bottom: 24px;
+                }
+            }
+        }
+    }
+
+    .service {
+        margin-bottom: $mb-100;
+
+        .service-content {
+            display: flex;
+            align-items: center;
+
+            .service-cards {
+                display: flex;
+                flex-wrap: wrap;
+                width: 50%;
+                row-gap: 28px;
+                
+                .service-card {
+                    @include card;
+                    width: calc(50% - 47px);
+                    padding: 32px 32px 48px;
+                    margin-right: 47px;
+
+                    .image-container {
+                        width: 86px;
+                        height: 86px;
+                        border-radius: 50%;
+                        box-shadow: 0 2px 10px #00000014;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                        margin-bottom: 24px;
+                    }
+
+                    .arrow {
+                        background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/icon01.svg);
+                    }
+                    
+                    .robot {
+                        background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/icon02.svg);
+                    }
+                    
+                    .message{
+                        background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/icon03.svg);
+                    }
+                    
+                    .group-message {
+                        background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/icon04.svg);
+                    }
+
+                    h3 {
+                        font-size: 18px;
+                        line-height: 26px;
+                        margin-bottom: 16px;
+                    }
+                }
+            }
+            .service-info {
+                margin: auto;
+
+                h2 {
+                    margin-bottom: 16px;
+                }
+
+                p {
+                    font-size: 18px;
+                    line-height: 26px;
+                    margin-bottom: 24px;
+                }
+
+                button {
+                    @include button;
+                }
+            }
+
+        }
+    }
+
+    .testimonials {
+        h2 {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .testimonial-cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            line-height: 24px;
+
+            .testimonial-card {
+                display: flex;
+                position: relative;
+
+                & > img {
+                    position: absolute;
+                    top: 0;
+                    left: 32px;
+                    width: 80px;
+                    border-radius: 50%;
+                }
+
+                .card-info {
+                    @include card;
+                    margin-top: 56px;
+                    padding: 0px 32px;
+
+                    .client-txt {
+                        margin: 48px 0 24px;
+                    }
+
+                    hr {
+                        color: #DDDDDD;
+                        margin-bottom: 24px;
+                    }
+
+                    .client {
+                        display: flex;
+                        justify-content: space-between;
+                        margin-bottom: 24px;
+
+                        .client-info {
+                            p:first-of-type {
+                                font-weight: bold;
+                                margin-bottom: 8px;
+                            }
+                        }
+
+                        .client-rating {
+                            align-self: flex-end;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.footer {
+    .footer-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/home_footer.svg);
+        background-repeat: no-repeat;
+        background-position: top center;
+        background-size: 100% auto;
+
+        p {
+            @include size-32;
+            margin: 260px 0 48px;
+        }
+
+        button {
+            @include button;
+            margin-bottom: $mb-100;
+        }
+    }
+
+    .bottom {
+        padding: 16px 0;
+        background-color: #F5F5F5;
+        text-align: center;
+    }
+}
