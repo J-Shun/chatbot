@@ -1,6 +1,24 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     color: $black;
     line-height: 24px;
+}
+
+.background-circle {
+    background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/ball01.svg), url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/ball02.svg), url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/ball03.svg);
+    background-repeat: no-repeat;
+    background-size: 25%, 20vw, 150px;
+    background-position-x: -15vw, 85vw, 0.5vw;
+    background-position-y: 700px, 50%, 76%;
+    @include pad {
+        background-position-y: 600px, 50%, 80%;
+    }
+    @include phone {
+        background-position-y: 800px, 58%, 87%;
+    }
 }
 
 .container {
@@ -8,6 +26,12 @@ body {
     margin: 100%;
     margin: auto;
     padding: 0 20px;
+    @include pad {
+        max-width: 756px;
+    }
+    @include phone {
+        max-width: 335px;
+    }
 }
 
 h2 {
@@ -26,35 +50,63 @@ button {
     @include button;
 }
 
+.top-button {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    right: 26px;
+    bottom: 26px;
+    background-color: $green;
+    text-align: center;
+    line-height: 50px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 50%;
+    text-decoration: none;
+}
+
 .header-top {
     background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/bg_home.svg);
     background-repeat: no-repeat;
     background-position: top right;
     background-size: contain;
+    @include pad {
+        background-image: none;
+    }
 }
 
-.price-top {
-    background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/banner.svg);
-    background-repeat: no-repeat;
-    background-position: top right;
+.price-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 0;
+    @include pad {
+        display: none;
+    }
 }
 
 .header {
     position: relative;
     margin-bottom: $mb-100;
     @include pad {
-        background-image: none;
-    }
-    @include phone {
         margin-bottom: 60px;
     }
     
     .navbar {
+        position: relative;
+        z-index: 1;
         margin-bottom: 30px;
         @include pad {
             background-color: #fff;
             border-bottom: 2px solid #FFD153;
             margin-bottom: 32px;
+        }
+
+        &.price-nav {
+            margin-bottom: 92px;
+            @include pad {
+                margin-bottom: 48px;
+            }
         }
 
         .container {
@@ -70,18 +122,20 @@ button {
 
             img {
                 height: 40px;
+                cursor: pointer;
                 @include pad {
                     height: 24px;
                 }
             }
 
-            a {
+            .red-button {
                 display: inline-block;
                 color: #fff;
                 line-height: 24px;
                 background-color: #FF5D50;
                 border-radius: 22px;
                 padding: 8px 32px;
+                text-decoration: none;
             }
         }
     }
@@ -92,8 +146,6 @@ button {
             padding-bottom: 117px;
             @include phone {
                 flex-direction: column;
-                padding-top: 20px;
-                padding-bottom: 20px;
             }
 
             .info {
@@ -151,15 +203,32 @@ button {
     }
 
     .intro {
+        position: relative;
+        z-index: 1;
+        @include pad {
+            background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/banner_sm.svg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: bottom right;
+        }
+
         h1 {
             font-size: 48px;
             line-height: 70px;
             font-weight: bold;
             margin-bottom: 16px;
+            @include pad {
+                font-size: 32px;
+                line-height: 42px;
+            }
         }
 
         p {
             padding-bottom: 180px;
+            @include pad {
+                padding-bottom: 361px;
+                line-height: 24px;
+            }
         }
     }
 
@@ -167,27 +236,18 @@ button {
         background-color: #F7F9FD;
         border-bottom-left-radius: 300px;
     }
-
-    // .price-img {
-    //     position: absolute;
-    //     top: 0;
-    //     right: 0;
-    // }
 }
 
 .main {
     margin-bottom: $mb-100;
-    @include phone {
+    @include pad {
         margin-bottom: 60px;
-    }
-    @include phone {
-        margin-bottom: 94px;
     }
 
     .platforms {
         text-align: center;
         margin-bottom: $mb-100;
-        @include phone {
+        @include pad {
             margin-bottom: 60px;
         }
         
@@ -204,8 +264,7 @@ button {
             flex-wrap: wrap;
 
             .platform-card {
-                width: 33%;
-
+                width: 30%;
                 @include phone {
                     width: 100%;
                     margin-bottom: 24px;
@@ -215,7 +274,6 @@ button {
                     width: 90px;
                     height: 90px;
                     margin-bottom: 24px;
-
                     @include pad {
                         width: 60px;
                         height: 60px;
@@ -244,7 +302,7 @@ button {
     .target {
         text-align: center;
         margin-bottom: $mb-100;
-        @include phone {
+        @include pad {
             margin-bottom: 60px;
         }
 
@@ -273,11 +331,12 @@ button {
                 gap: 24px;
             }
             @include phone {
-                grid-template-columns: 80%
+                grid-template-columns: 100%
             }
 
             .character {
                 @include card;
+                background-color: #fff;
                 overflow: hidden;
 
                 img {
@@ -285,15 +344,19 @@ button {
                     margin-bottom: 16px;
                 }
 
-                h3 {
-                    color: $green;
-                    font-size: 16px;
-                    line-height: 24px;
-                    margin-bottom: 16px;
-                }
+                .card-text {
+                    padding: 0 16px;
 
-                p {
-                    margin-bottom: 24px;
+                    h3 {
+                        color: $green;
+                        font-size: 16px;
+                        line-height: 24px;
+                        margin-bottom: 16px;
+                    }
+    
+                    p {
+                        margin-bottom: 24px;
+                    }
                 }
             }
         }
@@ -301,7 +364,7 @@ button {
 
     .service {
         margin-bottom: $mb-100;
-        @include phone {
+        @include pad {
             margin-bottom: 60px;
         }
 
@@ -322,7 +385,7 @@ button {
                     gap: 24px
                 }
                 @include phone {
-                    grid-template-columns: 80%;
+                    grid-template-columns: 100%;
 
                     .order {
                         order: 1;
@@ -435,6 +498,7 @@ button {
 
                 .card-info {
                     @include card;
+                    background-color: #fff;
                     margin-top: 56px;
                     padding: 0px 32px;
                     @include pad {
@@ -513,13 +577,12 @@ button {
         }
 
         .editions {
-            // display: flex;
             max-width: 909px;
             display: grid;
             grid-template-columns: 1fr 1fr;
             margin: 0 auto;
             gap: 21px;
-            @include pad {
+            @include phone {
                 grid-template-columns: 1fr;
             }
     
@@ -528,7 +591,7 @@ button {
                 box-shadow: 0 2px 10px #00000014;
                 
                 h3 {
-                    margin-top: 10px;
+                    margin: 10px 0 16px;
                     font-size: 24px;
                     line-height: 35px;
                     text-align: center;
@@ -540,7 +603,10 @@ button {
                 .line {
                     width: 100%;
                     border-bottom: 1px solid #DDDDDD;
-                    margin: 16px 0 32px;
+                    margin-bottom: 32px;
+                    @include pad {
+                        margin-bottom: 24px;
+                    }
                 }
 
                 .edition-bottom {
@@ -563,16 +629,13 @@ button {
                         display: flex;
                         justify-content: space-between;
                         align-items: center;
-                        width: 100%;
                         margin-bottom: 32px;
-                        gap: 21px;
                         @include pad {
                             margin-bottom: 24px;
-                            gap: 6px;
                         }
         
                         .calculation-corner {
-                            width: 40%;
+                            width: 45%;
                             background-color: #F5F5F5;
                             border-radius: 12px;
                             padding: 24px 0;
@@ -613,11 +676,17 @@ button {
                             .check {
                                 display: flex;
                                 align-items: center;
-                                height: 16px;
+                                height: 24px;
                                 margin-right: 13px;
                                 @include pad {
-                                    height: 14px;
                                     margin-right: 16px;
+                                }
+                            }
+
+                            p {
+                                @include pad {
+                                    font-size: 14px;
+                                    line-height: 20px;
                                 }
                             }
                         }
@@ -626,6 +695,10 @@ button {
                     button {
                         margin: auto;
                         margin-bottom: 32px;
+
+                        @include pad {
+                            margin-bottom: 24px;
+                        }
                     }
                 }
             }
@@ -652,6 +725,9 @@ button {
             padding: 16px 32px;
             margin: 0 auto 16px;
             cursor: pointer;
+            @include pad {
+                padding: 16px 16px;
+            }
     
             .question-title {
                 display: flex;
@@ -659,23 +735,42 @@ button {
                 align-items: center;
                 font-size: 18px;
                 line-height: 28px;
+                @include pad {
+                    font-size: 16px;
+                    line-height: 24px;
+                }
+
+                h3 {
+                    font-weight: normal;
+                }
+                
+                .minus {
+                    display: none;
+                }
             }
-    
+            
             .answer {
                 display: none;
                 color: #747474;
                 line-height: 32px;
                 margin-top: 24px;
                 margin-bottom: 16px;
+                @include pad {
+                    margin-bottom: 8px;
+                }
             }
-    
+            
             &.active {
                 .question-title {
                     color: $green;
                 }
                 
-                .answer {
-                    // display: block;
+                .minus {
+                    display: block;
+                }
+
+                .plus {
+                    display: none;
                 }
             }
         }

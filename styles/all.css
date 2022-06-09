@@ -62,9 +62,33 @@ img {
   height: auto;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: #221E1F;
   line-height: 24px;
+}
+
+.background-circle {
+  background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/ball01.svg), url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/ball02.svg), url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/ball03.svg);
+  background-repeat: no-repeat;
+  background-size: 25%, 20vw, 150px;
+  background-position-x: -15vw, 85vw, 0.5vw;
+  background-position-y: 700px, 50%, 76%;
+}
+
+@media (max-width: 992px) {
+  .background-circle {
+    background-position-y: 600px, 50%, 80%;
+  }
+}
+
+@media (max-width: 576px) {
+  .background-circle {
+    background-position-y: 800px, 58%, 87%;
+  }
 }
 
 .container {
@@ -72,6 +96,18 @@ body {
   margin: 100%;
   margin: auto;
   padding: 0 20px;
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 756px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    max-width: 335px;
+  }
 }
 
 h2 {
@@ -104,6 +140,21 @@ button {
   cursor: pointer;
 }
 
+.top-button {
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  right: 26px;
+  bottom: 26px;
+  background-color: #56C4C5;
+  text-align: center;
+  line-height: 50px;
+  font-weight: bold;
+  color: #fff;
+  border-radius: 50%;
+  text-decoration: none;
+}
+
 .header-top {
   background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/bg_home.svg);
   background-repeat: no-repeat;
@@ -111,10 +162,23 @@ button {
   background-size: contain;
 }
 
-.price-top {
-  background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/banner.svg);
-  background-repeat: no-repeat;
-  background-position: top right;
+@media (max-width: 992px) {
+  .header-top {
+    background-image: none;
+  }
+}
+
+.price-img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 0;
+}
+
+@media (max-width: 992px) {
+  .price-img {
+    display: none;
+  }
 }
 
 .header {
@@ -124,17 +188,13 @@ button {
 
 @media (max-width: 992px) {
   .header {
-    background-image: none;
-  }
-}
-
-@media (max-width: 576px) {
-  .header {
     margin-bottom: 60px;
   }
 }
 
 .header .navbar {
+  position: relative;
+  z-index: 1;
   margin-bottom: 30px;
 }
 
@@ -143,6 +203,16 @@ button {
     background-color: #fff;
     border-bottom: 2px solid #FFD153;
     margin-bottom: 32px;
+  }
+}
+
+.header .navbar.price-nav {
+  margin-bottom: 92px;
+}
+
+@media (max-width: 992px) {
+  .header .navbar.price-nav {
+    margin-bottom: 48px;
   }
 }
 
@@ -169,6 +239,7 @@ button {
 
 .header .navbar .container img {
   height: 40px;
+  cursor: pointer;
 }
 
 @media (max-width: 992px) {
@@ -177,13 +248,14 @@ button {
   }
 }
 
-.header .navbar .container a {
+.header .navbar .container .red-button {
   display: inline-block;
   color: #fff;
   line-height: 24px;
   background-color: #FF5D50;
   border-radius: 22px;
   padding: 8px 32px;
+  text-decoration: none;
 }
 
 .header .home .container {
@@ -199,8 +271,6 @@ button {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    padding-top: 20px;
-    padding-bottom: 20px;
   }
 }
 
@@ -283,6 +353,20 @@ button {
   }
 }
 
+.header .intro {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 992px) {
+  .header .intro {
+    background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/banner_sm.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom right;
+  }
+}
+
 .header .intro h1 {
   font-size: 48px;
   line-height: 70px;
@@ -290,8 +374,22 @@ button {
   margin-bottom: 16px;
 }
 
+@media (max-width: 992px) {
+  .header .intro h1 {
+    font-size: 32px;
+    line-height: 42px;
+  }
+}
+
 .header .intro p {
   padding-bottom: 180px;
+}
+
+@media (max-width: 992px) {
+  .header .intro p {
+    padding-bottom: 361px;
+    line-height: 24px;
+  }
 }
 
 .header.header-background {
@@ -303,15 +401,9 @@ button {
   margin-bottom: 100px;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 992px) {
   .main {
     margin-bottom: 60px;
-  }
-}
-
-@media (max-width: 576px) {
-  .main {
-    margin-bottom: 94px;
   }
 }
 
@@ -320,7 +412,7 @@ button {
   margin-bottom: 100px;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 992px) {
   .main .platforms {
     margin-bottom: 60px;
   }
@@ -347,7 +439,7 @@ button {
 }
 
 .main .platforms .platform-list .platform-card {
-  width: 33%;
+  width: 30%;
 }
 
 @media (max-width: 576px) {
@@ -394,7 +486,7 @@ button {
   margin-bottom: 100px;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 992px) {
   .main .target {
     margin-bottom: 60px;
   }
@@ -439,8 +531,8 @@ button {
 
 @media (max-width: 576px) {
   .main .target .characters {
-    -ms-grid-columns: 80%;
-        grid-template-columns: 80%;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
   }
 }
 
@@ -448,6 +540,7 @@ button {
   border-radius: 12px;
   -webkit-box-shadow: 0 2px 10px #00000014;
           box-shadow: 0 2px 10px #00000014;
+  background-color: #fff;
   overflow: hidden;
 }
 
@@ -456,14 +549,18 @@ button {
   margin-bottom: 16px;
 }
 
-.main .target .characters .character h3 {
+.main .target .characters .character .card-text {
+  padding: 0 16px;
+}
+
+.main .target .characters .character .card-text h3 {
   color: #56C4C5;
   font-size: 16px;
   line-height: 24px;
   margin-bottom: 16px;
 }
 
-.main .target .characters .character p {
+.main .target .characters .character .card-text p {
   margin-bottom: 24px;
 }
 
@@ -471,7 +568,7 @@ button {
   margin-bottom: 100px;
 }
 
-@media (max-width: 576px) {
+@media (max-width: 992px) {
   .main .service {
     margin-bottom: 60px;
   }
@@ -513,8 +610,8 @@ button {
 
 @media (max-width: 576px) {
   .main .service .service-content .service-cards {
-    -ms-grid-columns: 80%;
-        grid-template-columns: 80%;
+    -ms-grid-columns: 100%;
+        grid-template-columns: 100%;
   }
   .main .service .service-content .service-cards .order {
     -webkit-box-ordinal-group: 2;
@@ -656,6 +753,7 @@ button {
   border-radius: 12px;
   -webkit-box-shadow: 0 2px 10px #00000014;
           box-shadow: 0 2px 10px #00000014;
+  background-color: #fff;
   margin-top: 56px;
   padding: 0px 32px;
 }
@@ -764,7 +862,7 @@ button {
   gap: 21px;
 }
 
-@media (max-width: 992px) {
+@media (max-width: 576px) {
   .main .price .editions {
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
@@ -778,7 +876,7 @@ button {
 }
 
 .main .price .editions .edition h3 {
-  margin-top: 10px;
+  margin: 10px 0 16px;
   font-size: 24px;
   line-height: 35px;
   text-align: center;
@@ -793,7 +891,13 @@ button {
 .main .price .editions .edition .line {
   width: 100%;
   border-bottom: 1px solid #DDDDDD;
-  margin: 16px 0 32px;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 992px) {
+  .main .price .editions .edition .line {
+    margin-bottom: 24px;
+  }
 }
 
 .main .price .editions .edition .edition-bottom {
@@ -834,20 +938,17 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 100%;
   margin-bottom: 32px;
-  gap: 21px;
 }
 
 @media (max-width: 992px) {
   .main .price .editions .edition .edition-bottom .calculation {
     margin-bottom: 24px;
-    gap: 6px;
   }
 }
 
 .main .price .editions .edition .edition-bottom .calculation .calculation-corner {
-  width: 40%;
+  width: 45%;
   background-color: #F5F5F5;
   border-radius: 12px;
   padding: 24px 0;
@@ -904,20 +1005,32 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 16px;
+  height: 24px;
   margin-right: 13px;
 }
 
 @media (max-width: 992px) {
   .main .price .editions .edition .edition-bottom .functions li .check {
-    height: 14px;
     margin-right: 16px;
+  }
+}
+
+@media (max-width: 992px) {
+  .main .price .editions .edition .edition-bottom .functions li p {
+    font-size: 14px;
+    line-height: 20px;
   }
 }
 
 .main .price .editions .edition .edition-bottom button {
   margin: auto;
   margin-bottom: 32px;
+}
+
+@media (max-width: 992px) {
+  .main .price .editions .edition .edition-bottom button {
+    margin-bottom: 24px;
+  }
 }
 
 .main .question {
@@ -950,6 +1063,12 @@ button {
   cursor: pointer;
 }
 
+@media (max-width: 992px) {
+  .main .question .question-box {
+    padding: 16px 16px;
+  }
+}
+
 .main .question .question-box .question-title {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -964,6 +1083,21 @@ button {
   line-height: 28px;
 }
 
+@media (max-width: 992px) {
+  .main .question .question-box .question-title {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+.main .question .question-box .question-title h3 {
+  font-weight: normal;
+}
+
+.main .question .question-box .question-title .minus {
+  display: none;
+}
+
 .main .question .question-box .answer {
   display: none;
   color: #747474;
@@ -972,8 +1106,22 @@ button {
   margin-bottom: 16px;
 }
 
+@media (max-width: 992px) {
+  .main .question .question-box .answer {
+    margin-bottom: 8px;
+  }
+}
+
 .main .question .question-box.active .question-title {
   color: #56C4C5;
+}
+
+.main .question .question-box.active .minus {
+  display: block;
+}
+
+.main .question .question-box.active .plus {
+  display: none;
 }
 
 .footer .footer-info {

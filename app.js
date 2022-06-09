@@ -1,44 +1,36 @@
-const price = [
-    {
+const data = {
+    people: {
         '10000位': '10000',
         '15000位': '15000',
         '20000位': '20000',
         '25000位': '25000',
         '>25000位': '>25000',
     },
-    {
-        '10000位': '600',
-        '15000位': '900',
-        '20000位': '1200',
-        '25000位': '1500',
-        '>25000位': '2000',
-    },
-    {
-        '10000位': '1600',
-        '15000位': '2400',
-        '20000位': '3300',
-        '25000位': '4200',
-        '>25000位': '6000',
-    },
-]
-
+    price: {
+        '10000位': ['600','1600'],
+        '15000位': ['900','2400'],
+        '20000位': ['1200','3300'],
+        '25000位': ['1500','4200'],
+        '>25000位': ['2000','6000'],
+    }
+}
 
 $(document).ready(function() {
-    $('.price-btn').click(function() {
-        $('.subscriber-number').text(price[0][$(this).text()]);
-        $('.basic-price').text(price[1][$(this).text()]);
-        $('.standard-price').text(price[2][$(this).text()]);
+    $('.buttons button').click(function() {
+        $('.subscriber-number').text(data.people[$(this).text()]);
+        $('.basic-price').text(data.price[$(this).text()][0]);
+        $('.standard-price').text(data.price[$(this).text()][1]);
 
-        $('.price-btn').removeClass('active');
+        $('.buttons button').removeClass('active');
         $(this).addClass('active');
     })
 
 
     $('.question-box').click(function() {
-        $('.question-box').removeClass('active');
-        $(this).addClass('active');
+        $('.question-box').not(this).removeClass('active');
+        $(this).toggleClass('active');
 
-        $('.question-box:not(.active) .answer').slideUp();
-        $('.answer', this).slideDown();
+        $('.answer', this).slideToggle();
+        $('.answer').not('.question-box.active .answer').slideUp();
     })
 })
