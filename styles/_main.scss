@@ -30,7 +30,7 @@ body {
         max-width: 756px;
     }
     @include phone {
-        max-width: 335px;
+        max-width: 345px;
     }
 }
 
@@ -93,54 +93,44 @@ button {
     }
     
     .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         position: relative;
         z-index: 1;
-        margin-bottom: 30px;
+        padding: 24px 20px;
         @include pad {
             background-color: #fff;
             border-bottom: 2px solid #FFD153;
-            margin-bottom: 32px;
+            padding-top: 16px;
+            padding-bottom: 16px;
         }
 
-        &.price-nav {
-            margin-bottom: 92px;
+        img {
+            height: 40px;
+            cursor: pointer;
             @include pad {
-                margin-bottom: 48px;
+                height: 24px;
             }
         }
 
-        .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-top: 24px;
-            padding-bottom: 24px;
-            @include pad {
-                padding-top: 8px;
-                padding-bottom: 8px;
-            }
-
-            img {
-                height: 40px;
-                cursor: pointer;
-                @include pad {
-                    height: 24px;
-                }
-            }
-
-            .red-button {
-                display: inline-block;
-                color: #fff;
-                line-height: 24px;
-                background-color: #FF5D50;
-                border-radius: 22px;
-                padding: 8px 32px;
-                text-decoration: none;
-            }
+        .red-button {
+            display: inline-block;
+            color: #fff;
+            line-height: 24px;
+            background-color: #FF5D50;
+            border-radius: 22px;
+            padding: 8px 32px;
+            text-decoration: none;
         }
     }
 
     .home {
+        padding-top: 30px;
+        @include pad {
+            padding-top: 32px;
+        }
+
         .container {
             display: flex;
             padding-bottom: 117px;
@@ -203,6 +193,8 @@ button {
     }
 
     .intro {
+        padding-top: 92px;
+        padding-left: 20px;
         position: relative;
         z-index: 1;
         @include pad {
@@ -210,6 +202,9 @@ button {
             background-repeat: no-repeat;
             background-size: cover;
             background-position: bottom right;
+        }
+        @include phone {
+            padding-top: 48px;
         }
 
         h1 {
@@ -225,9 +220,8 @@ button {
 
         p {
             padding-bottom: 180px;
-            @include pad {
+            @include phone {
                 padding-bottom: 361px;
-                line-height: 24px;
             }
         }
     }
@@ -543,6 +537,11 @@ button {
     }
 
     .price {
+        background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/ball03.svg);
+        background-repeat: no-repeat;
+        background-size: 360px;
+        background-position-x: -280px;
+        background-position-y: 50%;
         margin-bottom: $mb-100;
         @include pad {
             margin-bottom: 60px;
@@ -580,6 +579,7 @@ button {
             max-width: 909px;
             display: grid;
             grid-template-columns: 1fr 1fr;
+            background-color: #fff;
             margin: 0 auto;
             gap: 21px;
             @include phone {
@@ -587,8 +587,7 @@ button {
             }
     
             .edition {
-                border-radius: 12px;
-                box-shadow: 0 2px 10px #00000014;
+                @include card;
                 
                 h3 {
                     margin: 10px 0 16px;
@@ -719,9 +718,8 @@ button {
         }
     
         .question-box {
+            @include card;
             max-width: 904px;
-            border-radius: 12px;
-            box-shadow: 0 2px 10px #00000014;
             padding: 16px 32px;
             margin: 0 auto 16px;
             cursor: pointer;
